@@ -1,0 +1,31 @@
+{
+    "_id": "601b42e2-ff39-4d42-8b6a-f214835b18ca",
+    "colName": "mongodb",
+    "created": "2024-04-13T10:50:18.921Z",
+    "sortNum": 10000,
+    "folders": [
+        {
+            "_id": "13dbc345-7f90-4568-8599-ab0a38aa1897",
+            "name": "user",
+            "containerId": "",
+            "created": "2024-04-13T10:50:24.941Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "4396c853-4481-432d-860e-82c87d0fe8bc",
+            "colId": "601b42e2-ff39-4d42-8b6a-f214835b18ca",
+            "containerId": "13dbc345-7f90-4568-8599-ab0a38aa1897",
+            "name": "create",
+            "url": "{{server}}/user",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-13T10:50:36.849Z",
+            "modified": "2024-04-13T10:52:24.110Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

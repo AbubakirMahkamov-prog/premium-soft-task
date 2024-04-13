@@ -1,0 +1,14 @@
+{
+    "_id": "75896cb5-9aad-4c2d-9cad-0003cbfbb974",
+    "name": "mongodb",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2024-04-13T10:51:02.566Z",
+    "modified": "2024-04-13T10:51:02.566Z",
+    "data": [
+        {
+            "name": "server",
+            "value": "http://localhost:3001"
+        }
+    ]
+}

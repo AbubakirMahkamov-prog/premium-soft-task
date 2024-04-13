@@ -1,0 +1,63 @@
+[
+    {
+        "_id": "4396c853-4481-432d-860e-82c87d0fe8bc",
+        "colId": "601b42e2-ff39-4d42-8b6a-f214835b18ca",
+        "created": "2024-04-13T10:51:35.625Z",
+        "modified": "2024-04-13T10:54:15.223Z",
+        "response": {
+            "responseText": "",
+            "filePath": "",
+            "type": "text",
+            "headers": [
+                {
+                    "name": "content-type",
+                    "value": "text/plain; charset=utf-8"
+                },
+                {
+                    "name": "content-length",
+                    "value": "9"
+                },
+                {
+                    "name": "date",
+                    "value": "Sat, 13 Apr 2024 10:54:15 GMT"
+                },
+                {
+                    "name": "connection",
+                    "value": "close"
+                }
+            ],
+            "cookies": [],
+            "testResults": [],
+            "url": "http://localhost:3001/user",
+            "status": 404,
+            "statusText": "Not Found",
+            "contentType": "text/plain; charset=utf-8",
+            "contentLength": "9 Bytes",
+            "responseTimeText": "6 ms",
+            "responseTime": 6,
+            "responseSize": 9,
+            "preScriptTime": 3,
+            "preReqTime": 4,
+            "reqTime": 10,
+            "postScriptTime": 0,
+            "chartHTML": ""
+        },
+        "requestInfo": {
+            "reqUrl": "http://localhost:3001/user",
+            "headers": [
+                {
+                    "name": "accept-encoding",
+                    "value": "gzip, deflate, br"
+                },
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                }
+            ]
+        }
+    }
+]
