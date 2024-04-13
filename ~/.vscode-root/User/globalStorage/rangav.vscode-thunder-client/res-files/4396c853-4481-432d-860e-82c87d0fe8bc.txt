@@ -1,1 +1,7 @@
-Not Found
+{
+  "name": "Abubakir",
+  "age": 20,
+  "role": "Admin",
+  "_id": "661a71f531cf8f326db549dd",
+  "__v": 0
+}

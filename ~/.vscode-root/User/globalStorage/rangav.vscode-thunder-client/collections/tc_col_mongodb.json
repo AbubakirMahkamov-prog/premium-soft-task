@@ -22,9 +22,14 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-04-13T10:50:36.849Z",
-            "modified": "2024-04-13T10:52:24.110Z",
+            "modified": "2024-04-13T11:51:34.413Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Abubakir\",\n  \"age\": 20,\n  \"role\": \"Admin\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]

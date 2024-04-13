@@ -427,3 +427,80 @@ Request Headers:
   "Accept": "*/*",
   "User-Agent": "Thunder Client (https://www.thunderclient.com)"
 }
+
+---------------- Running Request: ----------------
+Environment Used: mongodb (Active)
+Request Url: http://localhost:3001/user
+Method: POST
+Request Headers:
+{
+  "content-length": "56",
+  "accept-encoding": "gzip, deflate, br",
+  "Accept": "*/*",
+  "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  "Content-Type": "application/json"
+}
+Request Body:
+{
+  "name": "Abubakir",
+  "age": 20,
+  "role": "Admin"
+}
+
+---------------- Running Request: ----------------
+Environment Used: mongodb (Active)
+Request Url: http://localhost:3001/user
+Method: POST
+Request Headers:
+{
+  "content-length": "56",
+  "accept-encoding": "gzip, deflate, br",
+  "Accept": "*/*",
+  "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  "Content-Type": "application/json"
+}
+Request Body:
+{
+  "name": "Abubakir",
+  "age": 20,
+  "role": "Admin"
+}
+
+---------------- Running Request: ----------------
+Environment Used: mongodb (Active)
+Request Url: http://localhost:3001/user
+Method: POST
+Request Headers:
+{
+  "content-length": "56",
+  "accept-encoding": "gzip, deflate, br",
+  "Accept": "*/*",
+  "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  "Content-Type": "application/json"
+}
+Request Body:
+{
+  "name": "Abubakir",
+  "age": 20,
+  "role": "Admin"
+}
+
+---------------- Running Request: ----------------
+Environment Used: mongodb (Active)
+Request Url: http://localhost:3001/user
+Method: POST
+Request Headers:
+{
+  "content-length": "56",
+  "accept-encoding": "gzip, deflate, br",
+  "cookie": "koa.sess=eyJ2aWV3cyI6MSwiX2V4cGlyZSI6MTcxMzA5NTUzMDgwMiwiX21heEFnZSI6ODY0MDAwMDB9; koa.sess.sig=b4NM6h0uQPBtv75YHxTbsm-NuDs",
+  "Accept": "*/*",
+  "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+  "Content-Type": "application/json"
+}
+Request Body:
+{
+  "name": "Abubakir",
+  "age": 20,
+  "role": "Admin"
+}

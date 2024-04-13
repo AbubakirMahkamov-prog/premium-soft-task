@@ -3,14 +3,13 @@ import bcrypt from "bcrypt";
 import userModel from "../models/user.js";
 class UserController {
     create = async function (ctx, next) {
-        const { name, age, role } = ctx.request.body;
-        const model = await userModel.create({
-           name,
-           age,
-           role
+        const { name, age, role } = ctx.requst.body;
+        userModel.create({
+            name: String,
+            age: Number,
+            role: String
         })
-        console.log(model)
-        ctx.body = model;
+        ctx.body = 'ok'
     }
 }
 

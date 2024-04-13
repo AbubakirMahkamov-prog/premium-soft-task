@@ -3,42 +3,123 @@
         "_id": "4396c853-4481-432d-860e-82c87d0fe8bc",
         "colId": "601b42e2-ff39-4d42-8b6a-f214835b18ca",
         "created": "2024-04-13T10:51:35.625Z",
-        "modified": "2024-04-13T10:54:15.223Z",
+        "modified": "2024-04-13T11:52:21.709Z",
         "response": {
             "responseText": "",
             "filePath": "",
-            "type": "text",
+            "type": "json",
             "headers": [
                 {
+                    "name": "access-control-allow-origin",
+                    "value": "http://localhost:5173"
+                },
+                {
+                    "name": "access-control-allow-credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "access-control-allow-methods",
+                    "value": "POST,GET,PATCH"
+                },
+                {
+                    "name": "content-security-policy",
+                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                    "name": "cross-origin-embedder-policy",
+                    "value": "require-corp"
+                },
+                {
+                    "name": "cross-origin-opener-policy",
+                    "value": "same-origin"
+                },
+                {
+                    "name": "cross-origin-resource-policy",
+                    "value": "same-origin"
+                },
+                {
+                    "name": "origin-agent-cluster",
+                    "value": "?1"
+                },
+                {
+                    "name": "referrer-policy",
+                    "value": "no-referrer"
+                },
+                {
+                    "name": "strict-transport-security",
+                    "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                    "name": "x-content-type-options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "x-dns-prefetch-control",
+                    "value": "off"
+                },
+                {
+                    "name": "x-download-options",
+                    "value": "noopen"
+                },
+                {
+                    "name": "x-frame-options",
+                    "value": "SAMEORIGIN"
+                },
+                {
+                    "name": "x-permitted-cross-domain-policies",
+                    "value": "none"
+                },
+                {
+                    "name": "x-xss-protection",
+                    "value": "0"
+                },
+                {
                     "name": "content-type",
-                    "value": "text/plain; charset=utf-8"
+                    "value": "application/json; charset=utf-8"
                 },
                 {
                     "name": "content-length",
-                    "value": "9"
+                    "value": "105"
+                },
+                {
+                    "name": "set-cookie",
+                    "value": "koa.sess=eyJ2aWV3cyI6MiwiX2V4cGlyZSI6MTcxMzA5NTU0MTY1NSwiX21heEFnZSI6ODY0MDAwMDB9; path=/; expires=Sun, 14 Apr 2024 11:52:21 GMT; httponly"
+                },
+                {
+                    "name": "set-cookie",
+                    "value": "koa.sess.sig=E_z_JRUDqwAb4tvawlzFOKmgJWo; path=/; expires=Sun, 14 Apr 2024 11:52:21 GMT; httponly"
                 },
                 {
                     "name": "date",
-                    "value": "Sat, 13 Apr 2024 10:54:15 GMT"
+                    "value": "Sat, 13 Apr 2024 11:52:21 GMT"
                 },
                 {
                     "name": "connection",
                     "value": "close"
                 }
             ],
-            "cookies": [],
+            "cookies": [
+                {
+                    "name": "koa.sess",
+                    "value": "eyJ2aWV3cyI6MiwiX2V4cGlyZSI6MTcxMzA5NTU0MTY1NSwiX21heEFnZSI6ODY0MDAwMDB9"
+                },
+                {
+                    "name": "koa.sess.sig",
+                    "value": "E_z_JRUDqwAb4tvawlzFOKmgJWo"
+                }
+            ],
             "testResults": [],
             "url": "http://localhost:3001/user",
-            "status": 404,
-            "statusText": "Not Found",
-            "contentType": "text/plain; charset=utf-8",
-            "contentLength": "9 Bytes",
-            "responseTimeText": "6 ms",
-            "responseTime": 6,
-            "responseSize": 9,
-            "preScriptTime": 3,
+            "status": 200,
+            "statusText": "OK",
+            "contentType": "application/json; charset=utf-8",
+            "contentLength": "0 Bytes",
+            "responseTimeText": "29 ms",
+            "responseTime": 29,
+            "responseSize": 0,
+            "preScriptTime": 2,
             "preReqTime": 4,
-            "reqTime": 10,
+            "reqTime": 36,
             "postScriptTime": 0,
             "chartHTML": ""
         },
@@ -46,8 +127,16 @@
             "reqUrl": "http://localhost:3001/user",
             "headers": [
                 {
+                    "name": "content-length",
+                    "value": "56"
+                },
+                {
                     "name": "accept-encoding",
                     "value": "gzip, deflate, br"
+                },
+                {
+                    "name": "cookie",
+                    "value": "koa.sess=eyJ2aWV3cyI6MSwiX2V4cGlyZSI6MTcxMzA5NTUzMDgwMiwiX21heEFnZSI6ODY0MDAwMDB9; koa.sess.sig=b4NM6h0uQPBtv75YHxTbsm-NuDs"
                 },
                 {
                     "name": "Accept",
@@ -56,8 +145,14 @@
                 {
                     "name": "User-Agent",
                     "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
                 }
-            ]
+            ],
+            "body": "{\n  \"name\": \"Abubakir\",\n  \"age\": 20,\n  \"role\": \"Admin\"\n}",
+            "type": "json"
         }
     }
 ]
