@@ -9,7 +9,7 @@ const userRouter = new Router({ prefix: '/user' });
 
 userRouter.post("/", auth(roles.Admin), joiMiddleware(userSchema.create), userController.create)
 userRouter.patch("/:id", auth(roles.Admin), joiMiddleware(userSchema.update), userController.update)
-userRouter.get("/", userController.getAll)
-userRouter.get("/:id", userController.getOne)
+userRouter.get("/", auth(), userController.getAll)
+userRouter.get("/:id", auth(), userController.getOne)
 
 export default userRouter;

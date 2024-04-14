@@ -5,11 +5,11 @@ import ProductController from "../controllers/productController.js";
 import auth from "../middlewares/auth.js";
 import { roles } from "../utils/roles.js";
 const productController = new ProductController();
-const userRouter = new Router({ prefix: '/product' });
+const productRouter = new Router({ prefix: '/product' });
 
-userRouter.post("/", auth(roles.Admin), joiMiddleware(productSchema), productController.create)
-userRouter.patch("/:id", auth(roles.Admin), joiMiddleware(productSchema), productController.update)
-userRouter.get("/", productController.getAll)
-userRouter.get("/:id", productController.getOne)
+productRouter.post("/", auth(roles.Admin), joiMiddleware(productSchema), productController.create)
+productRouter.patch("/:id", auth(roles.Admin), joiMiddleware(productSchema), productController.update)
+productRouter.get("/",auth(), productController.getAll)
+productRouter.get("/:id", auth(), productController.getOne)
 
-export default userRouter;
+export default productRouter;

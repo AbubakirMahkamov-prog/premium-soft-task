@@ -1,10 +1,19 @@
-import productModel from "../models/product.js";
-class ProductController {
+import orderModel from "../models/order.js";
+class OrderController {
     create = async function (ctx, next) {
       
         try {
-            let model = await productModel.create(ctx.request.body)
+            let { totalSumma, totalQuantity, payment, ordered_products } = ctx.request.body;
+            const user_id = ctx.request.currentUser._id;
+            let model = await orderModel.create({
+                user_id,
+                totalSumma,
+                totalQuantity,
+                payment,
+                ordered_products
+            })
             ctx.body = model;
+
         } catch (err) {
            ctx.status = 400;
            ctx.body = err.message;
@@ -22,7 +31,7 @@ class ProductController {
 
         try {
 
-            let model = await productModel.findOneAndUpdate({
+            let model = await orderModel.findOneAndUpdate({
                 _id: id
             }, {
                 title,
@@ -39,13 +48,13 @@ class ProductController {
         }  
     }
     getAll = async function (ctx, next) {
-        const modelList = await productModel.find({}, '_id title color description amount price');
+        const modelList = await orderModel.find({}, '_id title color description amount price');
         ctx.body = modelList;
     }
     getOne = async function (ctx, next) {
         const { id } = ctx.request.params;
         try {
-            const model = await productModel.findOne({
+            const model = await orderModel.findOne({
                 _id: id
             }, '_id title color description amount price');
             if (!model) {
@@ -61,4 +70,4 @@ class ProductController {
     }
 }
 
-export default ProductController;
+export default OrderController;
