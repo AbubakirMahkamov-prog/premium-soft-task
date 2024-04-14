@@ -8,7 +8,8 @@ import userRouter  from "../routes/user.js";
 import productRouter  from "../routes/product.js";
 import authRouter from "../routes/auth.js";
 import orderRouter from "../routes/order.js";
-export async function mainRouter (app) {
+export async function mainRouter (app) {      
+      
     app.use(cors({
         origin: 'http://localhost:5173',
         credentials: true,

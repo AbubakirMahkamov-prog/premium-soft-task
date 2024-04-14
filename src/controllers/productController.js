@@ -1,4 +1,5 @@
 import productModel from "../models/product.js";
+
 class ProductController {
     create = async function (ctx, next) {
       
