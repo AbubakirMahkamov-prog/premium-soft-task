@@ -1,6 +1,6 @@
 import  Koa from 'koa'
 import logger from 'koa-logger'
-import { Server }  from 'socket.io'
+
 import { config } from "./starters/config.js";
 import { mainRouter } from "./starters/routes.js";
 import db from "./db/db.js";
