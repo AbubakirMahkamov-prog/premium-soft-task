@@ -5,7 +5,7 @@ import authSchema from "../middlewares/validators/authValidator.js";
 import joiMiddleware from "../middlewares/joi.middleware.js";
 
 
-const authController = new AuthController();
+const authController = new AuthController();    
 const authRouter = new Router({ prefix: '/auth' });
 
 authRouter.post("/login",joiMiddleware(authSchema.login), authController.login)
