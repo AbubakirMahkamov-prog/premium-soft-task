@@ -9,5 +9,8 @@ const userController = new UserController();
 const userRouter = new Router({ prefix: '/user' });
 
 userRouter.post("/", joiMiddleware(userSchema.create), userController.create)
+userRouter.patch("/:id", joiMiddleware(userSchema.update), userController.update)
+userRouter.get("/", userController.getAll)
+userRouter.get("/:id", userController.getOne)
 
 export default userRouter;

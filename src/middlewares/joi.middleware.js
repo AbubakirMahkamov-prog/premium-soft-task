@@ -11,7 +11,7 @@ const middleware = (schema, property) => {
       } else {
         const { details } = error;
         const message = details.map(i => i.message).join(',');
-
+        
         ctx.status = 422;
         ctx.body = {
           error: message
