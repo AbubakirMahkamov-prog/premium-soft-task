@@ -17,9 +17,7 @@ export default function auth(...roles) {
             const accessToken = authHeader.replace(bearer, '');
             // Verify Token
             const decoded = jwt.verify(accessToken, config.ACCESS_TOKEN_SECRET);
-
-            const user = await userModel.findOne({ _id: decoded.userId });
-
+            const user = await userModel.findOne({ _id: decoded.UserInfo.userId });
             if (!user) {
                 ctx.status = 401;
                 ctx.body = 'Authentication failed!'
@@ -27,14 +25,14 @@ export default function auth(...roles) {
             }
 
             //if the uses has not permissions
-            if(!roles.includes(user.role)) {
+            if(!roles.includes(user.role) && roles.length > 0) {
                 ctx.status = 401;
                 ctx.body = 'Permission denied!'
                 return
             }
             // if the user has permissions
             ctx.request.currentUser = user;
-            next();
+            await next();
 
         } catch (err) {
             if (err.message == 'jwt expired') {
