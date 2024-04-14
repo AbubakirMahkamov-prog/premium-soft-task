@@ -11,5 +11,6 @@ userRouter.post("/", auth(roles.Admin), joiMiddleware(userSchema.create), userCo
 userRouter.patch("/:id", auth(roles.Admin), joiMiddleware(userSchema.update), userController.update)
 userRouter.get("/", auth(), userController.getAll)
 userRouter.get("/:id", auth(), userController.getOne)
+userRouter.delete("/:id", auth(), userController.deleteOne)
 
 export default userRouter;

@@ -11,5 +11,6 @@ productRouter.post("/", auth(roles.Admin), joiMiddleware(productSchema), product
 productRouter.patch("/:id", auth(roles.Admin), joiMiddleware(productSchema), productController.update)
 productRouter.get("/",auth(), productController.getAll)
 productRouter.get("/:id", auth(), productController.getOne)
+productRouter.delete("/:id", auth(), productController.deleteOne)
 
 export default productRouter;

@@ -11,5 +11,6 @@ orderRouter.post("/", auth(roles.Admin), joiMiddleware(orderSchema), orderContro
 orderRouter.patch("/:id", auth(roles.Admin), joiMiddleware(orderSchema), orderController.update)
 orderRouter.get("/", auth(), orderController.getAll)
 orderRouter.get("/:id", auth(), orderController.getOne)
+orderRouter.delete("/:id", auth(), orderController.deleteOne)
 
 export default orderRouter;

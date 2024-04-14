@@ -19,7 +19,10 @@ class UserController {
                 role,
                 address
             })
-            ctx.body = model;
+            const obj = model._doc;
+            ctx.body = {
+                ...obj
+            };
 
         } catch (err) {
            ctx.status = 400;
@@ -50,7 +53,7 @@ class UserController {
                 query['password'] = password;
             }
 
-            let model = await userModel.findOneAndUpdate({
+            let model = await userModel.updateOne({
                 _id: id
             }, query)
             
@@ -81,6 +84,18 @@ class UserController {
             ctx.body = model;
             
         } catch (err) {
+            ctx.status = 500;
+            ctx.body = err.message
+        }
+    }
+    deleteOne = async function (ctx, next) {
+        const { id } = ctx.request.params;
+        try {
+            const model = await userModel.deleteOne({
+                _id: id
+            })
+            ctx.body = model
+        } catch (error) {
             ctx.status = 500;
             ctx.body = err.message
         }
