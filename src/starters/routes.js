@@ -17,5 +17,7 @@ export async function mainRouter (app) {
     ]
     app.use(Session(app));  
     app.use(bodyParser())
+    
     app.use(userRouter.routes())
+     
 }

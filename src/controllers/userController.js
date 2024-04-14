@@ -23,9 +23,9 @@ class UserController {
             })
             ctx.body = model;
 
-        } catch (error) {
-            console.log(error)
-            throw new Error("error", error)        
+        } catch (err) {
+           ctx.status = 400;
+           ctx.body = err;
         }        
     }
 }

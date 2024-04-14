@@ -3,8 +3,16 @@ import db from "../db/db.js";
 
 
 const userModel = new mongoose.Schema({
-    username: String,
-    email: String,
+    username: {
+        type: String,
+        unique: true,
+        index: true
+    },
+    email: {
+        type: String,
+        unique: true,
+        index: true
+    },
     password: String,
     role: {
         type: String,
