@@ -7,7 +7,7 @@ import { roles } from "../utils/roles.js";
 const userController = new UserController();
 const userRouter = new Router({ prefix: '/user' });
 
-userRouter.post("/", auth(roles.Admin), joiMiddleware(userSchema.create), userController.create)
+userRouter.post("/", joiMiddleware(userSchema.create), userController.create)
 userRouter.patch("/:id", auth(roles.Admin), joiMiddleware(userSchema.update), userController.update)
 userRouter.get("/", auth(), userController.getAll)
 userRouter.get("/:id", auth(), userController.getOne)
