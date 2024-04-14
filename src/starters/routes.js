@@ -5,6 +5,7 @@ import cors from 'koa-cors';
 import { config } from "./config.js";
 //routers
 import userRouter  from "../routes/user.js";
+import productRouter  from "../routes/product.js";
 import authRouter from "../routes/auth.js";
 export async function mainRouter (app) {
     app.use(cors({
@@ -21,5 +22,5 @@ export async function mainRouter (app) {
     
     app.use(userRouter.routes())
     app.use(authRouter.routes())
-     
+    app.use(productRouter.routes())
 }

@@ -5,7 +5,7 @@ import { config } from "./starters/config.js";
 import { mainRouter } from "./starters/routes.js";
 import db from "./db/db.js";
 const app = new Koa();
-mainRouter(app)
+mainRouter(app);
 let server = app.listen(config.PORT, () => {
     console.log(`App running on ${config.PORT} 🚀`)
 });

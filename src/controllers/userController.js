@@ -1,4 +1,3 @@
-import * as Koa from "koa";
 import bcrypt from "bcrypt";
 import userModel from "../models/user.js";
 class UserController {
@@ -24,7 +23,7 @@ class UserController {
 
         } catch (err) {
            ctx.status = 400;
-           ctx.body = err;
+           ctx.body = err.message;
         }        
     }
     update = async function (ctx, next) {
@@ -59,7 +58,7 @@ class UserController {
 
         } catch (err) {
            ctx.status = 400;
-           ctx.body = err;
+           ctx.body = err.message;
         }  
     }
     getAll = async function (ctx, next) {
@@ -72,13 +71,18 @@ class UserController {
             const model = await userModel.findOne({
                 _id: id
             }, '_id username email role');
+
+            if (!model) {
+                ctx.status = 404;
+                ctx.body = "Model not found!"
+                return
+            }
+
             ctx.body = model;
             
         } catch (err) {
             ctx.status = 500;
-            ctx.body = {
-                ...err
-            }
+            ctx.body = err.message
         }
     }
 }
