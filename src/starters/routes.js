@@ -5,6 +5,7 @@ import cors from 'koa-cors';
 import { config } from "./config.js";
 //routers
 import userRouter  from "../routes/user.js";
+import authRouter from "../routes/auth.js";
 export async function mainRouter (app) {
     app.use(cors({
         origin: 'http://localhost:5173',
@@ -19,5 +20,6 @@ export async function mainRouter (app) {
     app.use(bodyParser())
     
     app.use(userRouter.routes())
+    app.use(authRouter.routes())
      
 }
