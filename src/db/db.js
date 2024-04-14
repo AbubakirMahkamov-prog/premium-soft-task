@@ -6,6 +6,10 @@ const db = mongoose.createConnection(config.DB_CONNECTION_STRING, {
     // useUnifiedTopology: true
 })
 
+db.once('open', () => {
+    console.log("Connection established!")
+})
+
 export default db;
 
 
