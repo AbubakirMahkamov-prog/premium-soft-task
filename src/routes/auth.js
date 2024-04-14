@@ -8,7 +8,7 @@ import joiMiddleware from "../middlewares/joi.middleware.js";
 const authController = new AuthController();    
 const authRouter = new Router({ prefix: '/auth' });
 
-authRouter.post("/login",joiMiddleware(authSchema.login), authController.login)
+authRouter.post("/login", joiMiddleware(authSchema.login), authController.login)
 authRouter.get('/refresh', authController.refresh)
 authRouter.post('/logout', authController.logout)
 
