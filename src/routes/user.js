@@ -1,7 +1,6 @@
 import joiMiddleware from "../middlewares/joi.middleware.js";
 import Router from "koa-router";
 import userSchema from "../middlewares/validators/userValidator.js";
-// import { auth } from "../middlewares/auth";
 import UserController from "../controllers/userController.js";
 
 
