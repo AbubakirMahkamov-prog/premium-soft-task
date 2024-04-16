@@ -14,11 +14,20 @@ const userModel = new mongoose.Schema({
         index: true
     },
     password: String,
+
     role: {
         type: String,
         enum: ['user', 'admin'],
         default: 'user'
     },
+    projects: [
+        {
+            project_id: {
+                type: mongoose.Schema.ObjectId,
+                ref: 'projects',
+            },
+        }
+    ],
     address: String
 })
 

@@ -8,6 +8,7 @@ import userRouter  from "../routes/user.js";
 import productRouter  from "../routes/product.js";
 import authRouter from "../routes/auth.js";
 import orderRouter from "../routes/order.js";
+import order2Router from "../routes/order2.js";
 export async function mainRouter (app) {      
       
     app.use(cors({
@@ -26,4 +27,5 @@ export async function mainRouter (app) {
     app.use(authRouter.routes())
     app.use(productRouter.routes())
     app.use(orderRouter.routes())
+    app.use(order2Router.routes())
 }
