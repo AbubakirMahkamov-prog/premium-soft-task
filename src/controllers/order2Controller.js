@@ -35,7 +35,7 @@ class Order2Controller {
         })
         ctx.body = modelList;
    }
-
+   
    getAllUserAcceptsAndDone = async(ctx, next) => {
 
     const accepted = await order2Model.aggregate([
