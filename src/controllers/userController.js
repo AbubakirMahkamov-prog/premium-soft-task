@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import userModel from "../models/user.js";
+
 class UserController {
     create = async function (ctx, next) {
         let {

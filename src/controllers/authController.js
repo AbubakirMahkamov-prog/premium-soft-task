@@ -3,67 +3,46 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { config } from "../starters/config.js";
 import userModel from "../models/user.js";
-
-
-
-
+import client from "../redis/redisClient.js";
 class AuthController {
 
     login = async function (ctx, next) {
-        let data = ctx.request.body;
-        if (!data.password) {
-            ctx.status = 400;
-            ctx.message = "Passoword is not sent!";
-            ctx.body = "Bad request!"
-            return
-        };
-
-        let user =  await userModel.findOne({
-            username: data.username
-        });
-
-        if(!user) {
-            ctx.status = 400;
-            ctx.message = "User not found!";
-            ctx.body = "Bad request!"
-            return
-        }
-        const isMatch = await bcrypt.compare(data.password, user.password);
-        if (!isMatch) {
-            ctx.status = 400;
-            ctx.message = "User not found!";
-            ctx.body = "Bad request!"
-            return
-        }
-        const accessToken = jwt.sign(
-            {
-                "UserInfo": {
-                    "userId": user._id
-                }
-            },
-            config.ACCESS_TOKEN_SECRET ? config.ACCESS_TOKEN_SECRET: "",
-            { expiresIn: '15m' }
-        )
+        try {
+            let data = ctx.request.body;
+            if (!data.password) {
+                ctx.status = 400;
+                ctx.message = "Passoword is not sent!";
+                ctx.body = "Bad request!"
+                return
+            };
     
-        const refreshToken = jwt.sign(
-            { "userId": user._id },
-            config.REFRESH_TOKEN_SECRET ? config.REFRESH_TOKEN_SECRET: "",
-            { expiresIn: '7d' }
-        )
-    
-        // Create secure cookie with refresh token 
-        ctx.cookies.set('jwt', refreshToken, {
-            httpOnly: true, //accessible only by web server 
-            secure: false, //https
-            sameSite: "strict", //cross-site cookie 
-            maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
-        })
-        // ctx.session.
-    
-        // Send accessToken containing username and roles 
-        ctx.body = {
-            accessToken
+            let user =  await userModel.findOne({
+                username: data.username
+            });
+            
+            if(!user) {
+                ctx.status = 400;
+                ctx.message = "User not found!";
+                ctx.body = "Bad request!"
+                return
+            }
+            await client.SET('user', 'Abubakir', 'EX', 3);
+            setTimeout(async () => {
+                const clientUser = await client.GET('user');
+                console.log(clientUser)
+            }, 2000)
+            
+            setTimeout(async () => {
+                const clientUser = await client.GET('user');
+                console.log(clientUser)
+            }, 5000)
+            ctx.body = {
+                ...user
+            }
+        } catch(err) {
+            console.log(err)
         }
+        
     }
 
     refresh = async function (ctx, next) {
